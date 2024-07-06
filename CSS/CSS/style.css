@@ -1,0 +1,102 @@
+/* CSS/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contenedor {
+    width: 80%;
+    margin: auto;
+    overflow-x: auto;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.tabla thead {
+    background-color: #8b0000; /* Rojo oscuro */
+    color: #ffffff;
+}
+
+.tabla th, .tabla td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabla th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.tabla tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tabla tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tabla tbody tr:last-of-type {
+    border-bottom: 2px solid #8b0000; /* Rojo oscuro */
+}
+
+.tabla tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+.tabla td {
+    color: #4a4a4a;
+}
+
+.tabla .descripcion {
+    width: 40%;
+}
+
+@media screen and (max-width: 600px) {
+    .tabla thead {
+        display: none;
+    }
+
+    .tabla, .tabla tbody, .tabla tr, .tabla td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabla tr {
+        margin-bottom: 15px;
+    }
+
+    .tabla td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .tabla td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
